@@ -17,6 +17,8 @@ public class Complejo {
     public Complejo(int ParteUno, int ParteDos) {
         this.ParteUno = ParteUno;
         this.ParteDos = ParteDos;
+        
+        
     }
 
     public int getParteUno() {
@@ -35,45 +37,46 @@ public class Complejo {
         this.ParteDos = ParteDos;
     }
     
-    public Complejo sumar(Complejo c2){
+    public Complejo sumar(Complejo c2) {
         Complejo x;
         
         int aux1 , aux2;
         
-        aux1 = this.ParteUno + c2.ParteUno;
-        aux2 = this.ParteDos + c2.ParteDos;
+        aux1 = this.ParteUno + this.ParteDos;
+        aux2 = c2.ParteUno + c2.ParteDos;
+        
         x = new Complejo(aux1, aux2);
         
         return x; 
     }
     
-    public Complejo restar(Complejo c2){
+    public Complejo restar(Complejo c2) {
         Complejo x;
         
         int aux1, aux2;
         
-        aux1 = this.ParteUno - c2.ParteUno;
-        aux2 = this.ParteDos - c2.ParteDos;
+        aux1 = this.ParteUno - this.ParteDos;
+        aux2 = c2.ParteUno - c2.ParteDos;
         
         x = new Complejo(aux1, aux2);
         
         return x;
     }
     
-    public Complejo Multiplicar(Complejo c2){
+    public Complejo Multiplicar(Complejo c2) {
         Complejo x;
         
         int aux1, aux2;
         
-        aux1 = ((this.ParteUno * c2.ParteUno) + (this.ParteUno * c2.ParteDos));  
-        aux2 = ((c2.ParteDos * this.ParteDos) + (c2.ParteUno * c2.ParteDos));
+        aux1 = ((this.ParteUno * c2.ParteUno) - (this.ParteUno * c2.ParteDos));  
+        aux2 = ((this.ParteDos * c2.ParteUno) + (this.ParteDos * c2.ParteDos));
         
         x = new Complejo(aux1, aux2);
         
         return x;
     }
     
-    public Complejo Dividir(Complejo c2){
+    public Complejo Dividir(Complejo c2){ 
         Complejo x;
         
         int aux1, aux2;
