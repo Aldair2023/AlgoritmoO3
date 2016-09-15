@@ -16,6 +16,8 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        this.setLocationRelativeTo(this);
+        
     }
 
     /**
@@ -30,20 +32,37 @@ public class Principal extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        txtResultadoUno = new javax.swing.JTextField();
+        txtResultadoPDos = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
-        txtNumerador = new javax.swing.JTextField();
-        txtDenoinador = new javax.swing.JTextField();
-        txtResultadoDos = new javax.swing.JTextField();
+        txtResultadoNDos = new javax.swing.JTextField();
+        txtResultadoDDos = new javax.swing.JTextField();
+        txtResultadoNUno = new javax.swing.JTextField();
+        txtResultadoDUno = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        txtDenominadorUno = new javax.swing.JTextField();
+        txtDeneminadorDos = new javax.swing.JTextField();
+        txtNumeradorUno = new javax.swing.JTextField();
+        txtNumeradorDos = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtParteUno = new javax.swing.JTextField();
         cmbOperaciones = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
-        txtParteDos = new javax.swing.JTextField();
         cmdCalcular = new javax.swing.JButton();
         cmdLimpiar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        txtResultadoPUno = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        txtParteUnoUno = new javax.swing.JTextField();
+        txtParteDos = new javax.swing.JTextField();
+        txtParteDosDos = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
         jTextField6.setText("jTextField1");
@@ -56,19 +75,70 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Operaciones Con Numeros Complejos");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 670, -1));
-        jPanel1.add(txtResultadoUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 150, 50));
+        jPanel1.add(txtResultadoPDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 140, 50, 50));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Division", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 14))); // NOI18N
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 140, 10));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 30, 10));
 
         jLabel3.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("=");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, -1, -1));
-        jPanel2.add(txtNumerador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 120, 50));
-        jPanel2.add(txtDenoinador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 120, 50));
-        jPanel2.add(txtResultadoDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 120, 50));
+        jPanel2.add(txtResultadoNDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 30, 40));
+        jPanel2.add(txtResultadoDDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 30, 40));
+        jPanel2.add(txtResultadoNUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 30, 40));
+        jPanel2.add(txtResultadoDUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 30, 40));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 120, 10));
+        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 30, 10));
+
+        jLabel8.setFont(new java.awt.Font("Arial", 2, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("i");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 20, -1));
+
+        jLabel9.setFont(new java.awt.Font("Arial", 2, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("+");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 50, 30));
+
+        jLabel12.setFont(new java.awt.Font("Arial", 2, 36)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("i");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 20, -1));
+
+        jLabel11.setFont(new java.awt.Font("Arial", 2, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("i");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 20, -1));
+
+        txtDenominadorUno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDenominadorUnoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtDenominadorUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 50, 50));
+
+        txtDeneminadorDos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDeneminadorDosActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtDeneminadorDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 50, 50));
+
+        txtNumeradorUno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumeradorUnoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtNumeradorUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 50, 50));
+
+        txtNumeradorDos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumeradorDosActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtNumeradorDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 50, 50));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/F81F82763.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
@@ -81,17 +151,16 @@ public class Principal extends javax.swing.JFrame {
                 txtParteUnoActionPerformed(evt);
             }
         });
-        jPanel1.add(txtParteUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 150, 50));
+        jPanel1.add(txtParteUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 50, 50));
 
         cmbOperaciones.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        cmbOperaciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-", "*" }));
+        cmbOperaciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-", "*", "/" }));
         jPanel1.add(cmbOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("=");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, -1, -1));
-        jPanel1.add(txtParteDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 150, 50));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, -1, -1));
 
         cmdCalcular.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         cmdCalcular.setText("Calcular");
@@ -100,6 +169,43 @@ public class Principal extends javax.swing.JFrame {
         cmdLimpiar.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         cmdLimpiar.setText("Limpiar");
         jPanel1.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 310, 220, 60));
+
+        jLabel6.setFont(new java.awt.Font("Arial", 2, 36)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("i");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 20, -1));
+        jPanel1.add(txtResultadoPUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 60, 50));
+
+        jLabel10.setFont(new java.awt.Font("Arial", 2, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("i");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 20, -1));
+
+        jLabel13.setFont(new java.awt.Font("Arial", 2, 36)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("i");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, 20, -1));
+
+        txtParteUnoUno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtParteUnoUnoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtParteUnoUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 50, 50));
+
+        txtParteDos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtParteDosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtParteDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 50, 50));
+
+        txtParteDosDos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtParteDosDosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtParteDosDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 50, 50));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/F81F82763.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
@@ -120,8 +226,36 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtParteUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParteUnoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtParteUnoActionPerformed
+
+    private void txtParteUnoUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParteUnoUnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtParteUnoUnoActionPerformed
+
+    private void txtParteDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParteDosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtParteDosActionPerformed
+
+    private void txtParteDosDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParteDosDosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtParteDosDosActionPerformed
+
+    private void txtDenominadorUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDenominadorUnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDenominadorUnoActionPerformed
+
+    private void txtDeneminadorDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDeneminadorDosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDeneminadorDosActionPerformed
+
+    private void txtNumeradorUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeradorUnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumeradorUnoActionPerformed
+
+    private void txtNumeradorDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeradorDosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumeradorDosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,19 +297,36 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton cmdCalcular;
     private javax.swing.JButton cmdLimpiar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField txtDenoinador;
-    private javax.swing.JTextField txtNumerador;
+    private javax.swing.JTextField txtDeneminadorDos;
+    private javax.swing.JTextField txtDenominadorUno;
+    private javax.swing.JTextField txtNumeradorDos;
+    private javax.swing.JTextField txtNumeradorUno;
     private javax.swing.JTextField txtParteDos;
+    private javax.swing.JTextField txtParteDosDos;
     private javax.swing.JTextField txtParteUno;
-    private javax.swing.JTextField txtResultadoDos;
-    private javax.swing.JTextField txtResultadoUno;
+    private javax.swing.JTextField txtParteUnoUno;
+    private javax.swing.JTextField txtResultadoDDos;
+    private javax.swing.JTextField txtResultadoDUno;
+    private javax.swing.JTextField txtResultadoNDos;
+    private javax.swing.JTextField txtResultadoNUno;
+    private javax.swing.JTextField txtResultadoPDos;
+    private javax.swing.JTextField txtResultadoPUno;
     // End of variables declaration//GEN-END:variables
 }

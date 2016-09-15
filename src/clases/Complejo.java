@@ -13,15 +13,10 @@ public class Complejo {
 
     private int ParteUno;
     private int ParteDos;
-    private int Numerador;
-    private int Denominador;
 
-    public Complejo(int ParteUno, int ParteDos, int Numerador, int Denominador) {
+    public Complejo(int ParteUno, int ParteDos) {
         this.ParteUno = ParteUno;
         this.ParteDos = ParteDos;
-        this.Numerador = Numerador;
-        this.Denominador = Denominador;
-
     }
 
     public int getParteUno() {
@@ -39,39 +34,56 @@ public class Complejo {
     public void setParteDos(int ParteDos) {
         this.ParteDos = ParteDos;
     }
-
-    public int getNumerador() {
-        return Numerador;
+    
+    public Complejo sumar(Complejo c2){
+        Complejo x;
+        
+        int aux1 , aux2;
+        
+        aux1 = this.ParteUno + c2.ParteUno;
+        aux2 = this.ParteDos + c2.ParteDos;
+        x = new Complejo(aux1, aux2);
+        
+        return x; 
     }
-
-    public void setNumerador(int Numerador) {
-        this.Numerador = Numerador;
+    
+    public Complejo restar(Complejo c2){
+        Complejo x;
+        
+        int aux1, aux2;
+        
+        aux1 = this.ParteUno - c2.ParteUno;
+        aux2 = this.ParteDos - c2.ParteDos;
+        
+        x = new Complejo(aux1, aux2);
+        
+        return x;
     }
-
-    public int getDenominador() {
-        return Denominador;
+    
+    public Complejo Multiplicar(Complejo c2){
+        Complejo x;
+        
+        int aux1, aux2;
+        
+        aux1 = ((this.ParteUno * c2.ParteUno) + (this.ParteUno * c2.ParteDos));  
+        aux2 = ((c2.ParteDos * this.ParteDos) + (c2.ParteUno * c2.ParteDos));
+        
+        x = new Complejo(aux1, aux2);
+        
+        return x;
     }
+    
+    public Complejo Dividir(Complejo c2){
+        Complejo x;
+        
+        int aux1, aux2;
+        
+        aux1 = ((this.ParteUno * c2.ParteUno)+(this.ParteDos * c2.ParteDos));
+        aux2 = ((c2.ParteUno * this.ParteDos) - (this.ParteUno * c2.ParteDos));
+        
 
-    public void setDenominador(int Denominador) {
-        this.Denominador = Denominador;
-    }
-
-    public Complejo sumar(f2) {
-        Complejo f;
-        int num, den, aux1, aux2, entF, numF, denF;
-
-        aux1 = (this.Denominador * this.Entero + this.Numerador);
-        aux2 = (f2.Entero * f2.Denominador + f2.Numerador);
-
-        num = aux1 * f2.Denominador - this.Denominador * aux2;
-        den = this.Denominador * f2.Denominador;
-
-        entF = num / den;
-        numF = num % den;
-        denF = den;
-
-        f = new Complejo(entF, numF, denF);
-        return f;
-
+         x = new Complejo(aux1, aux2);
+         
+         return x;
     }
 }
