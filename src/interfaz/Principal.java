@@ -113,6 +113,11 @@ public class Principal extends javax.swing.JFrame {
                 txtParteUnoActionPerformed(evt);
             }
         });
+        txtParteUno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtParteUnoKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtParteUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 50, 50));
 
         cmbOperaciones.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
@@ -165,6 +170,11 @@ public class Principal extends javax.swing.JFrame {
                 txtParteUnoUnoActionPerformed(evt);
             }
         });
+        txtParteUnoUno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtParteUnoUnoKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtParteUnoUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 50, 50));
 
         txtParteDos.addActionListener(new java.awt.event.ActionListener() {
@@ -172,11 +182,21 @@ public class Principal extends javax.swing.JFrame {
                 txtParteDosActionPerformed(evt);
             }
         });
+        txtParteDos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtParteDosKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtParteDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 50, 50));
 
         txtParteDosDos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtParteDosDosActionPerformed(evt);
+            }
+        });
+        txtParteDosDos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtParteDosDosKeyTyped(evt);
             }
         });
         jPanel1.add(txtParteDosDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 50, 50));
@@ -200,7 +220,7 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtParteUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParteUnoActionPerformed
-
+      
     }//GEN-LAST:event_txtParteUnoActionPerformed
 
     private void txtParteUnoUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParteUnoUnoActionPerformed
@@ -222,6 +242,18 @@ public class Principal extends javax.swing.JFrame {
             int aux1, aux2, aux3, aux4, x;
             int exe;
             Complejo x1, x2, x3;
+            
+            if(txtParteUno.getText().trim().isEmpty() && txtParteDos.getText().trim().isEmpty() && txtParteUnoUno.getText().trim().isEmpty() && txtParteDosDos.getText().trim().isEmpty()){
+              JOptionPane.showMessageDialog(this, "por favor LLENE los campos vacios", "ERROR", JOptionPane.WARNING_MESSAGE);
+            }else if(txtParteUno.getText().trim().isEmpty()){
+                JOptionPane.showMessageDialog(this, "Por favor indique la parte real del primer numero" , "ERROR", JOptionPane.WARNING_MESSAGE);
+            }else if(txtParteDos.getText().trim().isEmpty()){
+                JOptionPane.showMessageDialog(this, "Por favor indique la parte imaginaria del primer numero" , "ERROR", JOptionPane.WARNING_MESSAGE);
+            }else if(txtParteUnoUno.getText().trim().isEmpty()){
+                JOptionPane.showMessageDialog(this, "Por favor indique la parte real del segundo numero" , "ERROR", JOptionPane.WARNING_MESSAGE);
+            }else if(txtParteDosDos.getText().trim().isEmpty()){
+                JOptionPane.showMessageDialog(this, "Por favor indique la parte imaginaria del segundo numero" , "ERROR", JOptionPane.WARNING_MESSAGE);
+            }else{
 
             exe = cmbOperaciones.getSelectedIndex();
             aux1 = Integer.parseInt(txtParteUno.getText());
@@ -231,24 +263,28 @@ public class Principal extends javax.swing.JFrame {
 
             x1 = new Complejo(aux1, aux2);
             x2 = new Complejo(aux3, aux4);
-
+            
+            
             switch (exe) {
                 case 0:
                     x3 = x1.sumar(x2);
                     txtResultadoPUno.setText("" + x3.getParteUno());
                     txtResultadoPDos.setText("" + x3.getParteDos());
+                   
                     break;
 
                 case 1:
                     x3 = x1.restar(x2);
                     txtResultadoPUno.setText("" + x3.getParteUno());
                     txtResultadoPDos.setText("" + x3.getParteDos());
+                    
                     break;
 
                 case 2:
                     x3 = x1.Multiplicar(x2);
-                    txtResultadoPDos.setText("" + x3.getParteUno());
+                    txtResultadoPUno.setText("" + x3.getParteUno());
                     txtResultadoPDos.setText("" + x3.getParteDos());
+                    
                     break;
 
                 case 3:
@@ -259,11 +295,12 @@ public class Principal extends javax.swing.JFrame {
                     x = (x2.getParteUno() * x2.getParteUno()) + (x2.getParteDos() * x2.getParteDos());
                     txtResultadoDUno.setText("" + x);
                     txtResultadoDDos.setText("" + x);
-                    
+                    txtResultadoPUno.setText("");
+                    txtResultadoPDos.setText("");
                     
                     break;
             }
-
+            }
         } catch (NumberFormatException k) {
             JOptionPane.showMessageDialog(this, "ERROR en algunos digitos, por favor verifique", "MENSAJE", JOptionPane.WARNING_MESSAGE);
         }
@@ -284,8 +321,51 @@ public class Principal extends javax.swing.JFrame {
         txtResultadoPDos.setText("");
         cmbOperaciones.setSelectedIndex(0);
         txtParteUno.requestFocusInWindow();
-
     }//GEN-LAST:event_cmdLimpiarActionPerformed
+
+    private void txtParteUnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtParteUnoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c) && c != '-') {
+            getToolkit();
+
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtParteUnoKeyTyped
+
+    private void txtParteUnoUnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtParteUnoUnoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c) && c != '-') {
+            getToolkit();
+
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtParteUnoUnoKeyTyped
+
+    private void txtParteDosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtParteDosKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c) && c != '-') {
+            getToolkit();
+
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtParteDosKeyTyped
+
+    private void txtParteDosDosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtParteDosDosKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c) && c != '-') {
+            getToolkit();
+
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtParteDosDosKeyTyped
 
     /**
      * @param args the command line arguments
